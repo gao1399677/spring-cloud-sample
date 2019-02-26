@@ -1,0 +1,26 @@
+server:
+  port: 8088
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/gao1399677/application-config1.git
+          search-paths: application-config1                            # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: gao.shengsheng@qq.com                                        # git仓库的账号
+          password: daigao11290819
+#          uri: file://${user.home}/application-config1
+#          force-pull: true
+
+  rabbitmq:
+    host: 74.82.201.134
+    port: 5672
+    username: guest
+    password: guest

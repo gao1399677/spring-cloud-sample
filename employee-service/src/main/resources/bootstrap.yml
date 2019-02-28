@@ -1,8 +1,18 @@
 spring:
   application:
     name: employee-service
+  profiles:
+    active: instance2
   cloud:
     config:
       uri: http://localhost:8088
-  profiles:
-    active: instance2
+    stream:
+      bindings:
+        input:
+          destination: foodOrders
+          group: foodOrdersIntakeGroup
+  rabbitmq:
+    host: 74.82.201.134
+    port: 5672
+    username: guest
+    password: guest

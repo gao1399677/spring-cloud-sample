@@ -4,3 +4,9 @@ spring:
   cloud:
     config:
       uri: http://localhost:8088
+    stream:
+      bindings:
+        foodOrdersChannel:
+          destination: foodOrders
+      default:
+        contentType: application/json

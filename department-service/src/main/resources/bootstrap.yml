@@ -6,7 +6,7 @@ spring:
       uri: http://localhost:8088
     stream:
       bindings:
-        foodOrdersChannel:
+        output:
           destination: foodOrders
       default:
         contentType: application/json

@@ -10,3 +10,6 @@ spring:
           destination: foodOrders
       default:
         contentType: application/json
+feign:
+  hystrix:
+    enabled: true

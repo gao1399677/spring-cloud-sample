@@ -42,6 +42,11 @@ public class EmployeeController {
 	
 	@GetMapping("/department/{departmentId}")
 	public List<Employee> findByDepartment(@PathVariable("departmentId") Long departmentId) {
+		try {
+			Thread.sleep(1000*1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		LOGGER.info("Employee find: departmentId={}", departmentId);
 		return repository.findByDepartment(departmentId);
 	}

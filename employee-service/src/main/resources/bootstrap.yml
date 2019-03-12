@@ -1,8 +1,8 @@
 spring:
   application:
     name: employee-service
-  profiles:
-    active: instance
+#  profiles:
+#    active: instance1, instance2
   cloud:
     config:
       uri: http://localhost:8088

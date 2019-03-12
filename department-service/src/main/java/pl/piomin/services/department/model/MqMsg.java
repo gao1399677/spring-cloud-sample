@@ -1,4 +1,4 @@
-package pl.piomin.services.department.rabbitmq;
+package pl.piomin.services.department.model;
 
 import java.io.Serializable;
 

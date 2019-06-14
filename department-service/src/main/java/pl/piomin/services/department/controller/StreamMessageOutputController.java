@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Processor;
 import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.piomin.services.department.model.MqMsg;
 
@@ -20,7 +20,7 @@ public class StreamMessageOutputController {
     @Autowired
     private Processor processor;
 
-    @RequestMapping("/sendMessage")
+    @GetMapping("/sendMessage")
     public String sendMessage(@RequestBody MqMsg message) {
         boolean send = processor.output().send(MessageBuilder.withPayload(message).build());
         /*Input or output is just a name of channel, which is the build-in channel of Spring Stream*/
